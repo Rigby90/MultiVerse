@@ -324,10 +324,10 @@ public class MVPlayerListener extends PlayerListener {
 					return;
 				}
 			}
-			event.setFrom(d);
-			event.setTo(d);
-			pl.teleportTo(d);
-			ps.setTPCooldown();
+			if (pl.teleport(d)) {
+				ps.setTPCooldown();
+				event.setTo(d);
+			}
 			return;
 		}
 		return;
